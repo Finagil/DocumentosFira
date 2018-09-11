@@ -95,6 +95,7 @@ Module DocumentosFira
             End If
         Next
         ''COPIA LOS DATOS DEL MES
+        Dim Cobros As New System.IO.StreamWriter(RutaPol & "\CXSG.csv", System.IO.FileMode.Create, Text.Encoding.GetEncoding(1252))
         f1 = di1.GetFiles("*.csv")
         total = f1.Length
         For I As Integer = 0 To f1.Length - 1
@@ -107,7 +108,7 @@ Module DocumentosFira
                 Archivo = "Copy" & f1(I).Name
                 ArchivoII = "XCopy" & f1(I).Name
                 f1(I).CopyTo(RutaPol & "\" & Archivo)
-                Call Formatea(Archivo, RutaPol & "\" & Archivo)
+                Call Formatea(Archivo, RutaPol & "\" & Archivo, Cobros)
                 File.Delete(RutaPol & "\" & Archivo)
                 If Mid(f1(I).Name, 1, 1) = "2" Or Mid(f1(I).Name, 1, 1) = "1" Then
                     Call SacaDatos(ArchivoII, RutaPol & "\" & ArchivoII)
@@ -121,6 +122,7 @@ Module DocumentosFira
             End If
             Console.WriteLine(porcentaje.ToString("p") & " " & f1(I).Name)
         Next
+        Cobros.Close()
     End Sub
 
     Private Sub EnviaConfirmacion(ByVal Para As String, ByVal Mensaje As String, ByVal Asunto As String)
@@ -154,6 +156,7 @@ Module DocumentosFira
         Dim i As Integer = 0
         Dim Sfile As New StreamReader(Completo, Text.Encoding.GetEncoding(1252))
         Dim Nuevo As New System.IO.StreamWriter(RutaPol & "\" & Archivo & ".pol", System.IO.FileMode.Create, Text.Encoding.GetEncoding(1252))
+
         'Try
         Dim TipoArch As String = Mid(Archivo, 6, 1)
         While Not Sfile.EndOfStream
@@ -264,16 +267,27 @@ Module DocumentosFira
         Nuevo.Close()
     End Sub
 
-    Private Sub Formatea(ByVal Archivo As String, ByVal Completo As String)
+    Private Sub Formatea(ByVal Archivo As String, ByVal Completo As String, ByRef Cobros As StreamWriter)
         Dim Aux As String = ""
         Dim letra As String = ""
         Dim Linea As String
+        Dim LineaX() As String
         Dim Bandera As Boolean = False
         Dim Sfile As New StreamReader(Completo, Text.Encoding.GetEncoding(1252))
         Dim Nuevo As New System.IO.StreamWriter(RutaPol & "\X" & Archivo, System.IO.FileMode.Create, Text.Encoding.GetEncoding(1252))
+        Dim Xx As Integer = 0
         'Try
         While Not Sfile.EndOfStream
             Linea = Sfile.ReadLine()
+            LineaX = Linea.Split(",")
+            If Xx = 0 Then
+                Cobros.WriteLine(Linea)
+                Xx += 1
+            End If
+            If LineaX(46) = "16" Then
+                Cobros.WriteLine(Linea)
+            End If
+
             Aux = ""
             For x As Integer = 1 To Linea.Length
                 letra = Mid(Linea, x, 1)
@@ -288,6 +302,7 @@ Module DocumentosFira
                 Aux = Aux & letra
             Next
             Nuevo.WriteLine(Aux)
+
         End While
         'Catch ex As Exception
         '    Console.Write(ex.ToString)
