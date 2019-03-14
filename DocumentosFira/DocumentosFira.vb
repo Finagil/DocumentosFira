@@ -35,6 +35,8 @@ Module DocumentosFira
         ErrorControl = New EventLog("Application", System.Net.Dns.GetHostName(), "Docuemntos Fira")
         MantieneCarpetas()
         InsertaDatosPasivoFira()
+        Console.WriteLine("Fira Leé Archivos Tipo 3")
+        LeeCSV_Tipo3()
         Call RevisaArchivos()
         If Errores = False Or Errores = True Then
             Dim di1 As New DirectoryInfo(RutaPol)
@@ -473,34 +475,40 @@ Module DocumentosFira
     End Function
 
     Sub InsertaDatosPasivoFira()
-        'Try
-        Dim query As New SqlClient.SqlCommand
-        Dim queryInsert As New SqlClient.SqlCommand
-        Dim Datos As SqlClient.SqlDataReader
-        If Conn.State = ConnectionState.Closed Then Conn.Open()
-        If Conn2.State = ConnectionState.Closed Then Conn2.Open()
-        query.Connection = Conn
-        queryInsert.Connection = Conn2
-        query.CommandType = CommandType.Text
-        queryInsert.CommandType = CommandType.Text
-        query.CommandText = "SELECT * from Vw_IdCredito where idCreditoPasivo = ''"
-        Datos = query.ExecuteReader
-        While Datos.Read
-            queryInsert.CommandText = "INSERT INTO PasivoFIRA "
-            If Datos.Item("Tipo") = "Avio" Then
-                queryInsert.CommandText = queryInsert.CommandText & "SELECT IDCredito, 'A', Cliente, Anexo, Ciclo, Tipta, Tasas, DiferencialFINAGIL, 0.08, 0,0,'SIMFAA','','S',0,0,0,0 FROM Avios WHERE IDCredito*1 = '" & Datos.Item("IDcREDITO") & "' AND IDCredito NOT IN (SELECT IDCredito FROM PasivoFIRA) ORDER BY IDCredito*1"
-            Else
-                queryInsert.CommandText = queryInsert.CommandText & "SELECT IDCredito, 'R', Cliente, Anexo, '', Tipta, Tasas, Difer, 0.08, 0,0,'SIMFAA','','S',0,0,0,0 FROM Anexos WHERE IDCredito = '" & Datos.Item("IDcREDITO") & "' AND IDCredito NOT IN (SELECT IDCredito FROM PasivoFIRA) ORDER BY IDCredito*1"
-            End If
-            queryInsert.ExecuteScalar()
-        End While
-        'Catch ex As Exception
-        '    Console.Write(ex.ToString)
-        '    EnviaConfirmacion("ecacerest@lamoderna.com.mx", ex.Message, "Error " & Now)
-        'Finally
-        Conn.Close()
-        Conn2.Close()
-        'End Try
+        Try
+            Dim query As New SqlClient.SqlCommand
+            Dim queryInsert As New SqlClient.SqlCommand
+            Dim Datos As SqlClient.SqlDataReader
+            If Conn.State = ConnectionState.Closed Then Conn.Open()
+            If Conn2.State = ConnectionState.Closed Then Conn2.Open()
+            query.Connection = Conn
+            queryInsert.Connection = Conn2
+            query.CommandType = CommandType.Text
+            queryInsert.CommandType = CommandType.Text
+            query.CommandText = "SELECT * from Vw_IdCredito where idCreditoPasivo = ''"
+            Datos = query.ExecuteReader
+            While Datos.Read
+                queryInsert.CommandText = "INSERT INTO PasivoFIRA "
+                If Datos.Item("Tipo") = "Avio" Then
+                    queryInsert.CommandText = queryInsert.CommandText & "SELECT IDCredito, 'A', Cliente, Anexo, Ciclo, Tipta, Tasas, DiferencialFINAGIL, 0.08, 0,0,'SIMFAA','','S',0,0,0,0 FROM Avios WHERE IDCredito*1 = '" & Datos.Item("IDcREDITO") & "' AND IDCredito NOT IN (SELECT IDCredito FROM PasivoFIRA) ORDER BY IDCredito*1"
+                Else
+                    queryInsert.CommandText = queryInsert.CommandText & "SELECT IDCredito, 'R', Cliente, Anexo, '', Tipta, Tasas, Difer, 0.08, 0,0,'SIMFAA','','S',0,0,0,0 FROM Anexos WHERE IDCredito = '" & Datos.Item("IDcREDITO") & "' AND IDCredito NOT IN (SELECT IDCredito FROM PasivoFIRA) ORDER BY IDCredito*1"
+                End If
+                Try
+                    queryInsert.ExecuteScalar()
+                Catch ex As Exception
+                    Console.Write(ex.ToString)
+                    EnviaConfirmacion("ecacerest@lamoderna.com.mx", ex.Message, "Error " & Now)
+                End Try
+
+            End While
+        Catch ex As Exception
+            Console.Write(ex.ToString)
+            EnviaConfirmacion("ecacerest@lamoderna.com.mx", ex.Message, "Error " & Now)
+        Finally
+            Conn.Close()
+            Conn2.Close()
+        End Try
 
 
     End Sub
@@ -1589,6 +1597,61 @@ Module DocumentosFira
         Cartera.Fill(Cart)
         For Each r As ProductionDataSet.Vw_CarteraXrecuepararRow In Cart.Rows
             Historia.Insert(r.Promotor, r.Cliente, r.Anexo, r.Letra, r.Plazo, r.Saldo, r.Col1a29, r.Col30a59, r.Col60a89, r.Col90omas, r.Total, r.Retraso, r.Fecha)
+        Next
+    End Sub
+
+    Sub LeeCSV_Tipo3()
+        Dim ta As New ProductionDataSetTableAdapters.FIRA_MOVSTableAdapter
+        Dim ds As New ProductionDataSet
+        Dim r As ProductionDataSet.FIRA_MOVSRow
+        Dim arr As String()
+        Dim eRR As String = ""
+        Dim Linea As String
+        Dim n As Integer
+        Dim Nuevo As System.IO.StreamReader
+        Dim di1 As New DirectoryInfo(RutaFira)
+        Dim f1 As FileInfo() = di1.GetFiles("3*.csv")
+
+        total = f1.Length
+        For I As Integer = 0 To f1.Length - 1
+            Nuevo = New System.IO.StreamReader(f1(I).FullName, Text.Encoding.GetEncoding(1252))
+            n = 0
+            While Not Nuevo.EndOfStream
+                n += 1
+                Linea = Nuevo.ReadLine()
+                If n = 1 Then
+                    Linea = Nuevo.ReadLine()
+                End If
+                Linea = Linea.Replace("FINAGIL, S.A", "FINAGIL S.A")
+                Linea = Linea.Replace("""", "")
+                arr = Linea.Split(",")
+                r = ds.FIRA_MOVS.NewFIRA_MOVSRow
+                For w As Integer = 0 To arr.Length - 1
+                    If arr.Length = 58 And w = 27 Then
+                        r(w) = arr(w) & arr(w + 1)
+                    ElseIf arr.Length = 58 And w = 57 Then
+
+                    ElseIf arr.Length = 58 And w > 27 Then
+                        r(w) = arr(w + 1)
+                    Else
+                        r(w) = arr(w)
+                    End If
+                Next
+                Try
+                    ds.FIRA_MOVS.AddFIRA_MOVSRow(r)
+                    ds.FIRA_MOVS.GetChanges()
+                    ta.Update(ds.FIRA_MOVS)
+                Catch ex As Exception
+                    eRR = String.Join("|", arr) & vbCrLf
+                End Try
+            End While
+            If n > 0 Then
+                Nuevo.Close()
+            End If
+            If eRR > "" Then
+                EnviaConfirmacion("ecacerest@finagil.com.mx", eRR, "Error en datos Tipo3 FIRA_MOVS")
+            End If
+            Console.WriteLine(porcentaje.ToString("p") & " " & f1(I).Name)
         Next
     End Sub
 
