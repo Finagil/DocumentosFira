@@ -1651,6 +1651,7 @@ Module DocumentosFira
             If eRR > "" Then
                 EnviaConfirmacion("ecacerest@finagil.com.mx", eRR, "Error en datos Tipo3 FIRA_MOVS")
             End If
+            ta.CorrigeFechas()
             Console.WriteLine(porcentaje.ToString("p") & " " & f1(I).Name)
         Next
     End Sub

@@ -10243,7 +10243,7 @@ Namespace ProductionDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        [CLAVE BANCO], [NOMBRE BANCO], [CLAVE AGENTE], [NOMBRE AGENTE], [CL"& _ 
@@ -10260,6 +10260,29 @@ Namespace ProductionDataSetTableAdapters
                 " [MONTO IVA CARGO], [MONTO IVA ABONO], [PCT IVA], ENVIO, [ REFERENCIA SPEI], FOL"& _ 
                 "IO_SIIOF_ORIGEN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            FIRA_MOVS"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'EN"& _ 
+                "E','01') WHERE [FECHA DESCUENTO] LIKE '%ENE%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET "& _ 
+                "[FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'FEB','02') WHERE [FECHA DESCUENTO"& _ 
+                "] LIKE '%FEB%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FE"& _ 
+                "CHA DESCUENTO],'MAR','03') WHERE [FECHA DESCUENTO] LIKE '%MAR%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].["& _ 
+                "Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'ABR','04') WHER"& _ 
+                "E [FECHA DESCUENTO] LIKE '%ABR%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUE"& _ 
+                "NTO] = REPLACE([FECHA DESCUENTO],'MAY','05') WHERE [FECHA DESCUENTO] LIKE '%MAY%"& _ 
+                "';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO"& _ 
+                "],'JUN','06') WHERE [FECHA DESCUENTO] LIKE '%JUN%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS]"& _ 
+                " SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'JUL','07') WHERE [FECHA DESC"& _ 
+                "UENTO] LIKE '%JUL%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLAC"& _ 
+                "E([FECHA DESCUENTO],'AGO','08') WHERE [FECHA DESCUENTO] LIKE '%AGO%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [d"& _ 
+                "bo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'SEP','09')"& _ 
+                " WHERE [FECHA DESCUENTO] LIKE '%SEP%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA D"& _ 
+                "ESCUENTO] = REPLACE([FECHA DESCUENTO],'OCT','10') WHERE [FECHA DESCUENTO] LIKE '"& _ 
+                "%OCT%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESC"& _ 
+                "UENTO],'NOV','11') WHERE [FECHA DESCUENTO] LIKE '%NOV%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_"& _ 
+                "MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'DIC','12') WHERE [FECHA"& _ 
+                " DESCUENTO] LIKE '%DIC%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12051,6 +12074,28 @@ Namespace ProductionDataSetTableAdapters
                     ByVal Original__REFERENCIA_SPEI As String,  _
                     ByVal Original_FOLIO_SIIOF_ORIGEN As String) As Integer
             Return Me.Update(CLAVE_BANCO, NOMBRE_BANCO, CLAVE_AGENTE, NOMBRE_AGENTE, CLAVE_DIVISA, NOMBRE_DIVISA, CLAVE_DE_LA_OFICINA, NOMBRE_DE_LA_OFICINA, CLAVE_DEL_MUNICIPIO, NOMBRE_DEL_MUNICIPIO, CLAVE_REGIONAL, NOMBRE_DE_LA_REGIONAL, LINEA_DE_CREDITO, FIDEICOMISO_CREDITO, LINEA_GARANTIA, FIDEICOMISO_GAR, PROGRAMA, CLASE, FOLIO, Original_NUM_DE_CONTROL, Original_ID_CREDITO, NUMERO_BANCO, FECHA_DESCUENTO, CLAVE_ESQUEMA, NOMBRE_DEL_ESQUEMA, TIPO_FONDEO, _CLAVE_TASA_VAR_, ACREDITADO, FEC_POLIZA, FEC_INI, FEC_FIN, SALDO_INI, TASA_INT, DIAS, SALDO_FIN, PORC_GAR, PORC_COB, TIPO_CAM, MONTO_CONTRATADO, p1, PERIODICIDAD_REV__TASA, FOLIO_BANCOMEXT, Original_FOLIO_CARGO, Original_FOLIO_ABONO, CT_RESER, Original_CONCEPTO, DESCRIPCION_MOVIMIENTO, DESCRIPCION_AUXILIAR, CANCELACION, Original_IMPORTE_MOV_CARGO, Original_IMPORTE_MOV_ABONO, MONTO_IVA_CARGO, MONTO_IVA_ABONO, PCT_IVA, ENVIO, _REFERENCIA_SPEI, FOLIO_SIIOF_ORIGEN, Original_CLAVE_BANCO, Original_NOMBRE_BANCO, Original_CLAVE_AGENTE, Original_NOMBRE_AGENTE, Original_CLAVE_DIVISA, Original_NOMBRE_DIVISA, Original_CLAVE_DE_LA_OFICINA, Original_NOMBRE_DE_LA_OFICINA, Original_CLAVE_DEL_MUNICIPIO, Original_NOMBRE_DEL_MUNICIPIO, Original_CLAVE_REGIONAL, Original_NOMBRE_DE_LA_REGIONAL, Original_LINEA_DE_CREDITO, Original_FIDEICOMISO_CREDITO, Original_LINEA_GARANTIA, Original_FIDEICOMISO_GAR, Original_PROGRAMA, Original_CLASE, Original_FOLIO, Original_NUM_DE_CONTROL, Original_ID_CREDITO, Original_NUMERO_BANCO, Original_FECHA_DESCUENTO, Original_CLAVE_ESQUEMA, Original_NOMBRE_DEL_ESQUEMA, Original_TIPO_FONDEO, Original__CLAVE_TASA_VAR_, Original_ACREDITADO, Original_FEC_POLIZA, Original_FEC_INI, Original_FEC_FIN, Original_SALDO_INI, Original_TASA_INT, Original_DIAS, Original_SALDO_FIN, Original_PORC_GAR, Original_PORC_COB, Original_TIPO_CAM, Original_MONTO_CONTRATADO, p2, Original_PERIODICIDAD_REV__TASA, Original_FOLIO_BANCOMEXT, Original_FOLIO_CARGO, Original_FOLIO_ABONO, Original_CT_RESER, Original_CONCEPTO, Original_DESCRIPCION_MOVIMIENTO, Original_DESCRIPCION_AUXILIAR, Original_CANCELACION, Original_IMPORTE_MOV_CARGO, Original_IMPORTE_MOV_ABONO, Original_MONTO_IVA_CARGO, Original_MONTO_IVA_ABONO, Original_PCT_IVA, Original_ENVIO, Original__REFERENCIA_SPEI, Original_FOLIO_SIIOF_ORIGEN)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function CorrigeFechas() As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
 End Namespace
