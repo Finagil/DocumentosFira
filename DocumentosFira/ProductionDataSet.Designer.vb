@@ -10262,26 +10262,25 @@ Namespace ProductionDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'EN"& _ 
-                "E','01') WHERE [FECHA DESCUENTO] LIKE '%ENE%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET "& _ 
-                "[FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'FEB','02') WHERE [FECHA DESCUENTO"& _ 
-                "] LIKE '%FEB%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FE"& _ 
-                "CHA DESCUENTO],'MAR','03') WHERE [FECHA DESCUENTO] LIKE '%MAR%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].["& _ 
-                "Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'ABR','04') WHER"& _ 
-                "E [FECHA DESCUENTO] LIKE '%ABR%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUE"& _ 
-                "NTO] = REPLACE([FECHA DESCUENTO],'MAY','05') WHERE [FECHA DESCUENTO] LIKE '%MAY%"& _ 
-                "';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO"& _ 
-                "],'JUN','06') WHERE [FECHA DESCUENTO] LIKE '%JUN%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS]"& _ 
-                " SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'JUL','07') WHERE [FECHA DESC"& _ 
-                "UENTO] LIKE '%JUL%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLAC"& _ 
-                "E([FECHA DESCUENTO],'AGO','08') WHERE [FECHA DESCUENTO] LIKE '%AGO%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [d"& _ 
-                "bo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'SEP','09')"& _ 
-                " WHERE [FECHA DESCUENTO] LIKE '%SEP%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA D"& _ 
-                "ESCUENTO] = REPLACE([FECHA DESCUENTO],'OCT','10') WHERE [FECHA DESCUENTO] LIKE '"& _ 
-                "%OCT%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESC"& _ 
-                "UENTO],'NOV','11') WHERE [FECHA DESCUENTO] LIKE '%NOV%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].[Vw_FIRA_"& _ 
-                "MOVS] SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'DIC','12') WHERE [FECHA"& _ 
-                " DESCUENTO] LIKE '%DIC%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandText = "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'ENE','0" &
+                "1') WHERE [FECHA DESCUENTO] LIKE '%ENE%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DES" &
+                "CUENTO] = REPLACE([FECHA DESCUENTO],'FEB','02') WHERE [FECHA DESCUENTO] LIKE '%F" &
+                "EB%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO]," &
+                "'MAR','03') WHERE [FECHA DESCUENTO] LIKE '%MAR%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [F" &
+                "ECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'ABR','04') WHERE [FECHA DESCUENTO] " &
+                "LIKE '%ABR%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DES" &
+                "CUENTO],'MAY','05') WHERE [FECHA DESCUENTO] LIKE '%MAY%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOV" &
+                "S SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'JUN','06') WHERE [FECHA DES" &
+                "CUENTO] LIKE '%JUN%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([F" &
+                "ECHA DESCUENTO],'JUL','07') WHERE [FECHA DESCUENTO] LIKE '%JUL%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo]." &
+                "FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'AGO','08') WHERE [F" &
+                "ECHA DESCUENTO] LIKE '%AGO%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = RE" &
+                "PLACE([FECHA DESCUENTO],'SEP','09') WHERE [FECHA DESCUENTO] LIKE '%SEP%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDAT" &
+                "E [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'OCT','10') " &
+                "WHERE [FECHA DESCUENTO] LIKE '%OCT%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUEN" &
+                "TO] = REPLACE([FECHA DESCUENTO],'NOV','11') WHERE [FECHA DESCUENTO] LIKE '%NOV%'" &
+                ";" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'DIC" &
+                "','12') WHERE [FECHA DESCUENTO] LIKE '%DIC%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
