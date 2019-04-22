@@ -14,7 +14,7 @@ Module DocumentosFira
     Dim RutaPol As String = My.Settings.RutaPolizas
     Dim Errores As Boolean
     Dim ErrorControl As New EventLog
-    Dim ConnStr As String = "Data Source=Server-Raid;Initial Catalog=production;Persist Security Info=True;User ID=User_PRO;Password=User_PRO2015"
+    Dim ConnStr As String = "Data Source=SERVER-RAID2;Initial Catalog=production;Persist Security Info=True;User ID=User_PRO;Password=User_PRO2015"
     Dim Conn As New SqlClient.SqlConnection(ConnStr)
     Dim Conn2 As New SqlClient.SqlConnection(ConnStr)
     Dim Conn3 As New SqlClient.SqlConnection(ConnStr)
@@ -378,7 +378,7 @@ Module DocumentosFira
                     EnviaConfirmacion("ecacerest@lamoderna.com.mx", ex.Message, "Error " & Now)
                 End Try
             End While
-            Else
+        Else
             While Not Nuevo.EndOfStream
                 Try
                     Linea = Nuevo.ReadLine
@@ -397,10 +397,10 @@ Module DocumentosFira
                     EnviaConfirmacion("ecacerest@lamoderna.com.mx", ex.Message, "Error " & Now)
                 End Try
             End While
-            End If
+        End If
 
 
-            Nuevo.Close()
+        Nuevo.Close()
 
 
     End Sub
@@ -601,7 +601,7 @@ Module DocumentosFira
 
         ' Declaración de variables de conexión ADO .NET
 
-        Dim cnAgil As New SqlConnection("Server=SERVER-RAID; DataBase=production; User ID=User_PRO; pwd=User_PRO2015")
+        Dim cnAgil As New SqlConnection("Server=SERVER-RAID2; DataBase=production; User ID=User_PRO; pwd=User_PRO2015")
         Dim TA As New ProductionDataSetTableAdapters.ZSaldosInsolutosTableAdapter
         Dim cm1 As New SqlCommand()
         Dim cm2 As New SqlCommand()
@@ -1122,7 +1122,7 @@ Module DocumentosFira
 
         ' Declaración de variables de conexión ADO .NET
 
-        Dim cnAgil As New SqlConnection("Server=SERVER-RAID; DataBase=production; User ID=User_PRO; pwd=User_PRO2015")
+        Dim cnAgil As New SqlConnection("Server=SERVER-RAID2; DataBase=production; User ID=User_PRO; pwd=User_PRO2015")
         Dim TA As New ProductionDataSetTableAdapters.ZantiguedadTableAdapter
         Dim cm1 As New SqlCommand()
         Dim cm2 As New SqlCommand()

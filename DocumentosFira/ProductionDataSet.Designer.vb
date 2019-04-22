@@ -6937,8 +6937,8 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = "Data Source=server-raid\;Initial Catalog=Production;Persist Security Info=True;Us"& _ 
-                "er ID=User_PRO;Password=User_PRO2015"
+            Me._connection.ConnectionString = "Data Source=server-raid2\;Initial Catalog=Production;Persist Security Info=True;U"& _ 
+                "ser ID=User_PRO;Password=User_PRO2015"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7786,8 +7786,8 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = "Data Source=server-raid\;Initial Catalog=Production;Persist Security Info=True;Us"& _ 
-                "er ID=User_PRO;Password=User_PRO2015"
+            Me._connection.ConnectionString = "Data Source=server-raid2\;Initial Catalog=Production;Persist Security Info=True;U"& _ 
+                "ser ID=User_PRO;Password=User_PRO2015"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8855,8 +8855,8 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = "Data Source=server-raid\;Initial Catalog=Production;Persist Security Info=True;Us"& _ 
-                "er ID=User_PRO;Password=User_PRO2015"
+            Me._connection.ConnectionString = "Data Source=server-raid2\;Initial Catalog=Production;Persist Security Info=True;U"& _ 
+                "ser ID=User_PRO;Password=User_PRO2015"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9478,8 +9478,8 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = "Data Source=server-raid\;Initial Catalog=Production;Persist Security Info=True;Us"& _ 
-                "er ID=User_PRO;Password=User_PRO2015"
+            Me._connection.ConnectionString = "Data Source=server-raid2\;Initial Catalog=Production;Persist Security Info=True;U"& _ 
+                "ser ID=User_PRO;Password=User_PRO2015"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10236,8 +10236,8 @@ Namespace ProductionDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = "Data Source=server-raid\;Initial Catalog=Production;Persist Security Info=True;Us"& _ 
-                "er ID=User_PRO;Password=User_PRO2015"
+            Me._connection.ConnectionString = "Data Source=server-raid2\;Initial Catalog=Production;Persist Security Info=True;U"& _ 
+                "ser ID=User_PRO;Password=User_PRO2015"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10262,25 +10262,25 @@ Namespace ProductionDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'ENE','0" &
-                "1') WHERE [FECHA DESCUENTO] LIKE '%ENE%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DES" &
-                "CUENTO] = REPLACE([FECHA DESCUENTO],'FEB','02') WHERE [FECHA DESCUENTO] LIKE '%F" &
-                "EB%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO]," &
-                "'MAR','03') WHERE [FECHA DESCUENTO] LIKE '%MAR%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [F" &
-                "ECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'ABR','04') WHERE [FECHA DESCUENTO] " &
-                "LIKE '%ABR%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DES" &
-                "CUENTO],'MAY','05') WHERE [FECHA DESCUENTO] LIKE '%MAY%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOV" &
-                "S SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'JUN','06') WHERE [FECHA DES" &
-                "CUENTO] LIKE '%JUN%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([F" &
-                "ECHA DESCUENTO],'JUL','07') WHERE [FECHA DESCUENTO] LIKE '%JUL%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo]." &
-                "FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'AGO','08') WHERE [F" &
-                "ECHA DESCUENTO] LIKE '%AGO%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = RE" &
-                "PLACE([FECHA DESCUENTO],'SEP','09') WHERE [FECHA DESCUENTO] LIKE '%SEP%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDAT" &
-                "E [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'OCT','10') " &
-                "WHERE [FECHA DESCUENTO] LIKE '%OCT%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUEN" &
-                "TO] = REPLACE([FECHA DESCUENTO],'NOV','11') WHERE [FECHA DESCUENTO] LIKE '%NOV%'" &
-                ";" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'DIC" &
-                "','12') WHERE [FECHA DESCUENTO] LIKE '%DIC%';" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandText = "UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'ENE','0"& _ 
+                "1') WHERE [FECHA DESCUENTO] LIKE '%ENE%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].FIRA_MOVS SET [FECHA DES"& _ 
+                "CUENTO] = REPLACE([FECHA DESCUENTO],'FEB','02') WHERE [FECHA DESCUENTO] LIKE '%F"& _ 
+                "EB%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],"& _ 
+                "'MAR','03') WHERE [FECHA DESCUENTO] LIKE '%MAR%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].FIRA_MOVS SET [F"& _ 
+                "ECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'ABR','04') WHERE [FECHA DESCUENTO] "& _ 
+                "LIKE '%ABR%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DES"& _ 
+                "CUENTO],'MAY','05') WHERE [FECHA DESCUENTO] LIKE '%MAY%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].FIRA_MOV"& _ 
+                "S SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'JUN','06') WHERE [FECHA DES"& _ 
+                "CUENTO] LIKE '%JUN%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([F"& _ 
+                "ECHA DESCUENTO],'JUL','07') WHERE [FECHA DESCUENTO] LIKE '%JUL%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo]."& _ 
+                "FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'AGO','08') WHERE [F"& _ 
+                "ECHA DESCUENTO] LIKE '%AGO%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = RE"& _ 
+                "PLACE([FECHA DESCUENTO],'SEP','09') WHERE [FECHA DESCUENTO] LIKE '%SEP%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDAT"& _ 
+                "E [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'OCT','10') "& _ 
+                "WHERE [FECHA DESCUENTO] LIKE '%OCT%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUEN"& _ 
+                "TO] = REPLACE([FECHA DESCUENTO],'NOV','11') WHERE [FECHA DESCUENTO] LIKE '%NOV%'"& _ 
+                ";"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'DIC"& _ 
+                "','12') WHERE [FECHA DESCUENTO] LIKE '%DIC%';"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

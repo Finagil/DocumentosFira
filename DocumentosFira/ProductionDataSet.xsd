@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection ConnectionStringObject="Data Source=server-raid\;Initial Catalog=Production;Persist Security Info=True;User ID=User_PRO;Password=User_PRO2015" IsAppSettingsProperty="false" Modifier="Assembly" Name="server-raid.Production.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=server-raid2\;Initial Catalog=Production;Persist Security Info=True;User ID=User_PRO;Password=User_PRO2015" IsAppSettingsProperty="false" Modifier="Assembly" Name="server-raid.Production.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ZSaldosInsolutosTableAdapter" GeneratorDataComponentClassName="ZSaldosInsolutosTableAdapter" Name="ZSaldosInsolutos" UserDataComponentName="ZSaldosInsolutosTableAdapter">
@@ -1098,7 +1098,7 @@ UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'DIC','
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CarteraXrecuepararHIST" msprop:Generator_TableClassName="CarteraXrecuepararHISTDataTable" msprop:Generator_RowEvArgName="CarteraXrecuepararHISTRowChangeEvent" msprop:Generator_TableVarName="tableCarteraXrecuepararHIST" msprop:Generator_TablePropName="CarteraXrecuepararHIST" msprop:Generator_RowDeletingName="CarteraXrecuepararHISTRowDeleting" msprop:Generator_RowChangingName="CarteraXrecuepararHISTRowChanging" msprop:Generator_RowEvHandlerName="CarteraXrecuepararHISTRowChangeEventHandler" msprop:Generator_RowDeletedName="CarteraXrecuepararHISTRowDeleted" msprop:Generator_RowChangedName="CarteraXrecuepararHISTRowChanged" msprop:Generator_UserTableName="CarteraXrecuepararHIST" msprop:Generator_RowClassName="CarteraXrecuepararHISTRow">
+        <xs:element name="CarteraXrecuepararHIST" msprop:Generator_TableClassName="CarteraXrecuepararHISTDataTable" msprop:Generator_RowEvArgName="CarteraXrecuepararHISTRowChangeEvent" msprop:Generator_TableVarName="tableCarteraXrecuepararHIST" msprop:Generator_TablePropName="CarteraXrecuepararHIST" msprop:Generator_RowDeletingName="CarteraXrecuepararHISTRowDeleting" msprop:Generator_RowChangingName="CarteraXrecuepararHISTRowChanging" msprop:Generator_RowEvHandlerName="CarteraXrecuepararHISTRowChangeEventHandler" msprop:Generator_RowDeletedName="CarteraXrecuepararHISTRowDeleted" msprop:Generator_UserTableName="CarteraXrecuepararHIST" msprop:Generator_RowChangedName="CarteraXrecuepararHISTRowChanged" msprop:Generator_RowClassName="CarteraXrecuepararHISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:decimal" />
@@ -1142,7 +1142,7 @@ UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'DIC','
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vw_CarteraXrecueparar" msprop:Generator_TableClassName="Vw_CarteraXrecuepararDataTable" msprop:Generator_RowEvArgName="Vw_CarteraXrecuepararRowChangeEvent" msprop:Generator_TableVarName="tableVw_CarteraXrecueparar" msprop:Generator_TablePropName="Vw_CarteraXrecueparar" msprop:Generator_RowDeletingName="Vw_CarteraXrecuepararRowDeleting" msprop:Generator_RowChangingName="Vw_CarteraXrecuepararRowChanging" msprop:Generator_RowEvHandlerName="Vw_CarteraXrecuepararRowChangeEventHandler" msprop:Generator_RowDeletedName="Vw_CarteraXrecuepararRowDeleted" msprop:Generator_RowChangedName="Vw_CarteraXrecuepararRowChanged" msprop:Generator_UserTableName="Vw_CarteraXrecueparar" msprop:Generator_RowClassName="Vw_CarteraXrecuepararRow">
+        <xs:element name="Vw_CarteraXrecueparar" msprop:Generator_TableClassName="Vw_CarteraXrecuepararDataTable" msprop:Generator_RowEvArgName="Vw_CarteraXrecuepararRowChangeEvent" msprop:Generator_TableVarName="tableVw_CarteraXrecueparar" msprop:Generator_TablePropName="Vw_CarteraXrecueparar" msprop:Generator_RowDeletingName="Vw_CarteraXrecuepararRowDeleting" msprop:Generator_RowChangingName="Vw_CarteraXrecuepararRowChanging" msprop:Generator_RowEvHandlerName="Vw_CarteraXrecuepararRowChangeEventHandler" msprop:Generator_RowDeletedName="Vw_CarteraXrecuepararRowDeleted" msprop:Generator_UserTableName="Vw_CarteraXrecueparar" msprop:Generator_RowChangedName="Vw_CarteraXrecuepararRowChanged" msprop:Generator_RowClassName="Vw_CarteraXrecuepararRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Promotor" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPromotor" msprop:Generator_ColumnPropNameInRow="Promotor" msprop:Generator_ColumnPropNameInTable="PromotorColumn" msprop:Generator_UserColumnName="Promotor" minOccurs="0">
@@ -1185,7 +1185,7 @@ UPDATE [dbo].FIRA_MOVS SET [FECHA DESCUENTO] = REPLACE([FECHA DESCUENTO],'DIC','
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FIRA_MOVS" msprop:Generator_TableClassName="FIRA_MOVSDataTable" msprop:Generator_TableVarName="tableFIRA_MOVS" msprop:Generator_RowChangedName="FIRA_MOVSRowChanged" msprop:Generator_TablePropName="FIRA_MOVS" msprop:Generator_RowDeletingName="FIRA_MOVSRowDeleting" msprop:Generator_RowChangingName="FIRA_MOVSRowChanging" msprop:Generator_RowEvHandlerName="FIRA_MOVSRowChangeEventHandler" msprop:Generator_RowDeletedName="FIRA_MOVSRowDeleted" msprop:Generator_RowClassName="FIRA_MOVSRow" msprop:Generator_UserTableName="FIRA_MOVS" msprop:Generator_RowEvArgName="FIRA_MOVSRowChangeEvent">
+        <xs:element name="FIRA_MOVS" msprop:Generator_TableClassName="FIRA_MOVSDataTable" msprop:Generator_TableVarName="tableFIRA_MOVS" msprop:Generator_TablePropName="FIRA_MOVS" msprop:Generator_RowDeletingName="FIRA_MOVSRowDeleting" msprop:Generator_RowChangingName="FIRA_MOVSRowChanging" msprop:Generator_RowEvHandlerName="FIRA_MOVSRowChangeEventHandler" msprop:Generator_RowDeletedName="FIRA_MOVSRowDeleted" msprop:Generator_UserTableName="FIRA_MOVS" msprop:Generator_RowChangedName="FIRA_MOVSRowChanged" msprop:Generator_RowEvArgName="FIRA_MOVSRowChangeEvent" msprop:Generator_RowClassName="FIRA_MOVSRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CLAVE_x0020_BANCO" msprop:Generator_ColumnVarNameInTable="columnCLAVE_BANCO" msprop:Generator_ColumnPropNameInRow="CLAVE_BANCO" msprop:Generator_ColumnPropNameInTable="CLAVE_BANCOColumn" msprop:Generator_UserColumnName="CLAVE BANCO" minOccurs="0">
