@@ -129,7 +129,7 @@ Module DocumentosFira
 
     Private Sub EnviaConfirmacion(ByVal Para As String, ByVal Mensaje As String, ByVal Asunto As String)
         'Dim Mensage As New MailMessage("Interno@Finagil.com.mx", Trim(Para), Trim(Asunto), Mensaje)
-        ''Dim Cliente As New SmtpClient("192.168.10.23")
+        ''Dim Cliente As New SmtpClient("smtp85.cmoderna.com")
         'Dim Cliente As New SmtpClient("smtp01.cmoderna.com", 26)
         'Try
         '    Cliente.Send(Mensage)
