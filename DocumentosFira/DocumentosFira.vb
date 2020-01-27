@@ -26,8 +26,8 @@ Module DocumentosFira
         'SaldosInsolutos()
         Console.WriteLine("Antigúedad de Saldos")
         Antiguedad()
-        Console.WriteLine("Guarda Historia")
-        LlenaHisotriaCartera()
+        'Console.WriteLine("Guarda Historia")
+        'LlenaHisotriaCartera()
         fecha = Date.Now
         fecha = fecha.AddDays(-8)
         RutaFiraMes = RutaFira & "\" & MonthName(fecha.Month)
